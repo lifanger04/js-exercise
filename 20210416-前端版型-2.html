@@ -87,80 +87,44 @@
     </div>
     
     <script>
-        var btn1 =document.querySelector('#btn-1')
-        var btn2 =document.querySelector('#btn-2')
-        var btn3 =document.querySelector('#btn-3')
-        var content1 =document.querySelector('#content-1')
-        var content2 =document.querySelector('#content-2')
-        var content3 =document.querySelector('#content-3')
-
-
-        // 方法一
-        // console.log(content);
+        var btn =document.querySelectorAll('.tan-btn')
+        var content =document.querySelectorAll('tab-content')
         
-        // btn1.onclick =function(){
-        //     btn1.classList.add('active')
-        //     content1.classList.add('active')
-
-        //     btn2.classList.remove('active')
-        //     content2.classList.remove('active')
-        //     btn3.classList.remove('active')
-        //     content3.classList.remove('active')
-        // }
-        // btn2.onclick =function(){
-        //     btn2.classList.add('active')
-        //     content2.classList.add('active')
-
-        //     btn1.classList.remove('active')
-        //     content1.classList.remove('active')
-        //     btn3.classList.remove('active')
-        //     content3.classList.remove('active')
-        // }
-        // btn3.onclick =function(){
-        //     btn3.classList.add('active')
-        //     content3.classList.add('active')
-
-        //     btn2.classList.remove('active')
-        //     content2.classList.remove('active')
-        //     btn1.classList.remove('active')
-        //     content1.classList.remove('active')
-        // }
-        
+        for (let index = 0; index < btn.length; index++) {
+            const element = array[index];
+            
+        }
 
 
-
-        // 方法二
-        tn1.onclick =function(){
-            clearALL()
+        btn1.onclick =function(){
             btn1.classList.add('active')
             content1.classList.add('active')
 
-            
-        }
-        btn2.onclick =function(){
-            clearALL()
-            btn2.classList.add('active')
-            content2.classList.add('active')
-
-            
-        }
-        btn3.onclick =function(){
-            clearALL()
-            btn3.classList.add('active')
-            content3.classList.add('active')
-
-            
-        }
-
-
-        function clearALL(){
-            btn1.classList.remove('active')
-            content1.classList.remove('active')
             btn2.classList.remove('active')
             content2.classList.remove('active')
             btn3.classList.remove('active')
             content3.classList.remove('active')
         }
+        btn2.onclick =function(){
+            btn2.classList.add('active')
+            content2.classList.add('active')
+
+            btn1.classList.remove('active')
+            content1.classList.remove('active')
+            btn3.classList.remove('active')
+            content3.classList.remove('active')
+        }
+        btn3.onclick =function(){
+            btn3.classList.add('active')
+            content3.classList.add('active')
+
+            btn2.classList.remove('active')
+            content2.classList.remove('active')
+            btn1.classList.remove('active')
+            content1.classList.remove('active')
+        }
+        
+
 
     </script>
 
