@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .tab-area{
+            width: 80%;
+            padding: 20px;
+            background-color: violet;
+            margin: auto;
+        }
+        .tab-btn-group{
+            width: 100%;
+            padding: 20px;
+            background-color: turquoise;
+            display: flex;
+            justify-content: space-between;
+        }
+        .tan-btn{
+            width: 160px;
+            height: 40px;
+            background-color: tomato;
+            text-align: center;
+            line-height: 40px;
+            font-size: 24px;
+            font-weight: 900;
+            cursor: pointer;
+            /* 滑鼠小手 */
+            transition: 0.3s;
+        }
+        .tan-btn.active{
+            background-color: teal;
+        }
+        .tan-btn:hover{
+            background-color: rgb(124, 59, 47);
+            
+        }
+        .tab-content{
+            background-color: rgb(255, 255, 188);
+            padding: 5px 0;
+            display: flex;
+            flex-direction: column;
+            display: none;
+        }
+        .active{
+        
+            display: block;
+        }
+        .tab-content-group{
+            width: 100%;
+            padding: 20px;
+            background-color: blanchedalmond;
+            display: flex;
+            flex-direction: column;
+    
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="tab-area">
+        <div class="tab-btn-group">
+            <div id="btn-1" class="tan-btn">按鈕1</div>
+            <div id="btn-2" class="tan-btn">按鈕2</div>
+            <div id="btn-3" class="tan-btn">按鈕3</div>
+        </div>
+        <div class="tab-content-group">
+            <div id="content-1"class="tab-content">
+                <h2>內容1</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta distinctio natus vitae fugiat voluptates eveniet consequuntur blanditiis unde quasi consequatur rem nobis velit dicta, itaque maiores repellendus fugit eligendi? Tempore!</p>
+            </div>
+            <div id="content-2"class="tab-content">
+                <h2>內容2</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta distinctio natus vitae fugiat voluptates eveniet consequuntur blanditiis unde quasi consequatur rem nobis velit dicta, itaque maiores repellendus fugit eligendi? Tempore!</p>
+            </div>
+            <div id="content-3"class="tab-content">
+                <h2>內容3</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta distinctio natus vitae fugiat voluptates eveniet consequuntur blanditiis unde quasi consequatur rem nobis velit dicta, itaque maiores repellendus fugit eligendi? Tempore!</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        var btn1 =document.querySelector('#btn-1')
+        var btn2 =document.querySelector('#btn-2')
+        var btn3 =document.querySelector('#btn-3')
+        var content1 =document.querySelector('#content-1')
+        var content2 =document.querySelector('#content-2')
+        var content3 =document.querySelector('#content-3')
+        
+        // console.log(content);
+
+        btn1.onclick =function(){
+            btn1.classList.add('active')
+            content1.classList.add('active')
+
+            btn2.classList.remove('active')
+            content2.classList.remove('active')
+            btn3.classList.remove('active')
+            content3.classList.remove('active')
+        }
+        btn2.onclick =function(){
+            btn2.classList.add('active')
+            content2.classList.add('active')
+
+            btn1.classList.remove('active')
+            content1.classList.remove('active')
+            btn3.classList.remove('active')
+            content3.classList.remove('active')
+        }
+        btn3.onclick =function(){
+            btn3.classList.add('active')
+            content3.classList.add('active')
+
+            btn2.classList.remove('active')
+            content2.classList.remove('active')
+            btn1.classList.remove('active')
+            content1.classList.remove('active')
+        }
+        
+
+
+    </script>
+
+
+</body>
+</html>

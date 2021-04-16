@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="https://images.chinatimes.com/newsphoto/2020-07-04/900/20200704002959.jpg" alt="" class="dog">
+    
+
+    <script>
+        // var dogbig = document.querySelector('img')  ，也可以指定img
+        var dog = document.querySelector('.dog')
+        // .src為指定圖片
+        // dog.src = 'https://i.imgur.com/dHCnosu.jpg'
+        dog.onclick = function(){
+
+            // 下面這行是比較不是給值，因此要給==(比較)，而不是=(值)
+            // 圖片順序叫喚是可行的
+            // if (dog.src == 'https://i.imgur.com/dHCnosu.jpg') {
+            //     dog.src = 'https://images.chinatimes.com/newsphoto/2020-07-04/900/20200704002959.jpg'
+            // } else {
+            //     dog.src = 'https://i.imgur.com/dHCnosu.jpg'
+            // }
+
+            if (dog.src == 'https://images.chinatimes.com/newsphoto/2020-07-04/900/20200704002959.jpg') {
+
+                dog.src = 'https://i.imgur.com/dHCnosu.jpg'
+            } else {
+                dog.src = 'https://images.chinatimes.com/newsphoto/2020-07-04/900/20200704002959.jpg'
+            }
+        }
+
+
+
+        // https://i.imgur.com/dHCnosu.jpg
+        // https://images.chinatimes.com/newsphoto/2020-07-04/900/20200704002959.jpg
+    </script>
+
+
+</body>
+</html>
