@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .card-group {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-content: flex-start;
+        }
+
+        .card {
+            width: 400px;
+            height: 600px;
+            background-color: wheat;
+            margin: 0 0 80px 0;
+        }
+
+        .photo {
+            width: 100%;
+            height: 70%;
+            background-color: red;
+        }
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .content {
+            width: 100%;
+            height: 30%;
+            padding: 10px 0;
+            background-color: violet;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card-group"></div>
+    <div class="card-group"></div>
+    <div class="card-group"></div>
+    <div class="card-group"></div>
+
+
+    <script>
+        // object  obj
+
+        //   key(鍵) : value(值),
+
+        // var Justin = {
+        //     img: "https://www.dogstrust.org.uk/help-advice/_images/164742v800_puppy-1.jpg",
+        //     age: "24",
+        //     gender: "男",
+        //     food: "牛肉"
+        // }
+
+        // 4種飲料 品名 價錢 內容物
+
+        var card_group = document.querySelector('.card-group')
+        
+        // card_group.innerHTML = '<div class="card"><div class="photo"><img src="" alt=""></div><div class="content"><p>年齡</p><p>性別</p><p>喜歡的食物</p></div></div>'
+        
+        
+        // 樣板字串  ``
+        // card_group.innerHTML = `
+        // <div class="card">
+        //     <div class="photo">
+        //         <img src="${Justin.img}" alt="">
+        //     </div>
+        //     <div class="content">
+        //         <p>年齡:${Justin.age}</p>
+        //         <p>性別:${Justin.gender}</p>
+        //         <p>喜歡的食物:${Justin.food}</p>
+        //     </div>
+        // </div>`
+        
+        
+
+        for (let index = 0; index < card_group.length; index++) {
+            const element = array[index];
+            card_group.innerHTML = `
+            <div class="card">
+                <div class="photo">
+                    <img src="${drinks.img}" alt="">
+                </div>
+                <div class="content">
+                    <p>品名:${drinks.drink}</p>
+                    <p>價錢:${drinks.price}</p>
+                    <p>內容物:${drinks.contents}</p>
+                </div>
+            </div>`
+        }
+        
+
+        var drinks = [
+            {
+                img:'http://40509205.weebly.com/uploads/1/1/2/4/112481993/s309141653707044140_p9_i1_w450.png',
+                drink:'紅茶',
+                price:'25元',
+                contents:'茶葉、水'
+            },
+            {
+                img:'https://foodtracer.taipei.gov.tw/Backend/upload/product/27617149/27617149_50.jpg',
+                drink:'鮮奶茶',
+                price:'45元',
+                contents:'鮮奶、茶葉、水'
+            },
+            {
+                img:'https://foodtracer.gov.taipei/Backend/upload/product/28962490/28962490_46.jpg',
+                drink:'珍珠奶茶',
+                price:'65元',
+                contents:'奶精、茶葉、水、珍珠'
+            },
+            {
+                img:'https://foodtracer.gov.taipei/Backend/upload/product/54213331/54213331_41.jpg',
+                drink:'冰淇淋紅茶',
+                price:'55元',
+                contents:'香草冰淇淋、茶葉、水'
+            }
+        ]
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .card-group {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-content: flex-start;
+        }
+
+        .card {
+            width: 400px;
+            height: 600px;
+            background-color: wheat;
+            margin: 0 0 80px 0;
+        }
+
+        .photo {
+            width: 100%;
+            height: 70%;
+            background-color: rgb(255, 245, 219);
+        }
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .content {
+            width: 100%;
+            height: 30%;
+            padding: 10px 0;
+            background-color: rgb(255, 191, 107);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card-group"></div>
+    
+
+    <script>
+        // object  obj (物件)
+
+        //   key(鍵) : value(值),
+
+        var drinks = [
+            {
+                img:'http://40509205.weebly.com/uploads/1/1/2/4/112481993/s309141653707044140_p9_i1_w450.png',
+                drink:'紅茶',
+                price:'25元',
+                contents:'茶葉、水'
+            },
+            {
+                img:'https://foodtracer.taipei.gov.tw/Backend/upload/product/27617149/27617149_50.jpg',
+                drink:'鮮奶茶',
+                price:'45元',
+                contents:'鮮奶、茶葉、水'
+            },
+            {
+                img:'https://foodtracer.gov.taipei/Backend/upload/product/28962490/28962490_46.jpg',
+                drink:'珍珠奶茶',
+                price:'65元',
+                contents:'奶精、茶葉、水、珍珠'
+            },
+            {
+                img:'https://foodtracer.gov.taipei/Backend/upload/product/54213331/54213331_41.jpg',
+                drink:'冰淇淋紅茶',
+                price:'55元',
+                contents:'香草冰淇淋、茶葉、水'
+            }
+        ]
+
+        // 4種飲料 品名 價錢 內容物
+
+        var card_group = document.querySelector('.card-group')
+        
+        
+        // 方法一
+        // 樣板字串  ``
+        // card_group.innerHTML = `
+        // <div class="card">
+        //     <div class="photo">
+        //         <img src="${drinks[0].img}" alt="">
+        //     </div>
+        //     <div class="content">
+        //         <p>品名:${drinks[0].drink}</p>
+        //         <p>價錢:${drinks[0].price}</p>
+        //         <p>內容物:${drinks[0].contents}</p>
+        //     </div>
+        //     <div class="photo">
+        //         <img src="${drinks[1].img}" alt="">
+        //     </div>
+        //     <div class="content">
+        //         <p>品名:${drinks[1].drink}</p>
+        //         <p>價錢:${drinks[1].price}</p>
+        //         <p>內容物:${drinks[1].contents}</p>
+        //     </div>
+        //     <div class="photo">
+        //         <img src="${drinks[2].img}" alt="">
+        //     </div>
+        //     <div class="content">
+        //         <p>品名:${drinks[2].drink}</p>
+        //         <p>價錢:${drinks[2].price}</p>
+        //         <p>內容物:${drinks[2].contents}</p>
+        //     </div>
+        //     <div class="photo">
+        //         <img src="${drinks[3].img}" alt="">
+        //     </div>
+        //     <div class="content">
+        //         <p>品名:${drinks[3].drink}</p>
+        //         <p>價錢:${drinks[3].price}</p>
+        //         <p>內容物:${drinks[3].contents}</p>
+        //     </div>
+        // </div>`
+
+        // 方法二
+        // for (let index = 0; index < drinks.length; index++) {
+        //     card_group.innerHTML += `
+        //         <div class="card">
+        //             <div class="photo">
+        //                 <img src="${drinks[index].img}" alt="">
+        //             </div>
+        //             <div class="content">
+        //                 <p>品名:${drinks[index].drink}</p>
+        //                 <p>價錢:${drinks[index].price}</p>
+        //                 <p>內容物:${drinks[index].contents}</p>
+        //             </div>
+        //         </div>
+        //     </div>`
+        // }
+        
+        // console.log(card_group);
+
+        // 方法三 箭頭函式
+        
+        drinks.forEach(element => {
+            card_group.innerHTML += `
+                <div class="card">
+                    <div class="photo">
+                        <img src="${element.img}" alt="">
+                    </div>
+                    <div class="content">
+                        <p>品名:${element.drink}</p>
+                        <p>價錢:${element.price}</p>
+                        <p>內容物:${element.contents}</p>
+                    </div>
+                </div>
+            </div>`
+        });        
+
+    </script>
+</body>
+
+</html>
