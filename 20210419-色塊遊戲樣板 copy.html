@@ -54,7 +54,7 @@
 
     <script>
         var GamePanel = document.querySelector('.game-panel')
-        var level = 1
+        var level = 2
 
         
 
@@ -68,12 +68,12 @@
             // 調整方塊數量大小
             // 產生一個隨機顏色，賦予方塊
             for (let index = 0; index < level*level; index++) {
-                GamePanel.innerHTML += `<div class="box"style="width:calc(100%/1);height:calc(100%/1);background-color:rgb(${color})"></div>`
+                GamePanel.innerHTML += `<div class="box"style="width:calc(100%/2);height:calc(100%/2);background-color:rgb(${color})"></div>`
             }
 
             // 隨機產生正解方塊
             var boxes = document.querySelectorAll(".box")
-            boxes[Math.floor(Math.random()*1)].classList.add('ans')
+            boxes[Math.floor(Math.random()*4)].classList.add('ans')
             console.log(boxes);
 
             // 正解方塊透明度調整
@@ -83,37 +83,19 @@
             // 幫正解方塊加上onclick事件
             ans.onclick = function(){
                 let color = `${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)}`
-                var level = 2
-
-                GamePanel.innerHTML=``
-                for (let index = 0; index < level*level; index++) {
-                GamePanel.innerHTML += `<div class="box"style="width:calc(100%/2);height:calc(100%/2);background-color:rgb(${color})"></div>`
-            }
-                var boxes = document.querySelectorAll(".box")
-                boxes[Math.floor(Math.random()*4)].classList.add('ans')
-                console.log(boxes);
-
-                var ans = document.querySelector(".ans")
-                ans.style.opacity = 0.45
-
-
-                ans.onclick = function(){
-                    let color = `${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)}`
-                GamePanel.innerHTML=``
                 var level = 3
 
                 GamePanel.innerHTML=``
                 for (let index = 0; index < level*level; index++) {
                 GamePanel.innerHTML += `<div class="box"style="width:calc(100%/3);height:calc(100%/3);background-color:rgb(${color})"></div>`
             }
-
-
                 var boxes = document.querySelectorAll(".box")
                 boxes[Math.floor(Math.random()*9)].classList.add('ans')
                 console.log(boxes);
 
                 var ans = document.querySelector(".ans")
-                ans.style.opacity = 0.5
+                ans.style.opacity = 0.45
+
 
                 ans.onclick = function(){
                     let color = `${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)}`
@@ -131,8 +113,7 @@
                 console.log(boxes);
 
                 var ans = document.querySelector(".ans")
-                ans.style.opacity = 0.55
-
+                ans.style.opacity = 0.5
 
                 ans.onclick = function(){
                     let color = `${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)}`
@@ -150,7 +131,8 @@
                 console.log(boxes);
 
                 var ans = document.querySelector(".ans")
-                ans.style.opacity = 0.7
+                ans.style.opacity = 0.55
+
 
                 ans.onclick = function(){
                     let color = `${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)}`
@@ -168,7 +150,7 @@
                 console.log(boxes);
 
                 var ans = document.querySelector(".ans")
-                ans.style.opacity = 0.75
+                ans.style.opacity = 0.7
 
                 ans.onclick = function(){
                     let color = `${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)}`
@@ -186,7 +168,7 @@
                 console.log(boxes);
 
                 var ans = document.querySelector(".ans")
-                ans.style.opacity = 0.8
+                ans.style.opacity = 0.75
 
                 ans.onclick = function(){
                     let color = `${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)}`
@@ -204,11 +186,10 @@
                 console.log(boxes);
 
                 var ans = document.querySelector(".ans")
-                ans.style.opacity = 0.85
-                
+                ans.style.opacity = 0.8
+
                 ans.onclick = function(){
-                GamePanel.innerHTML=``
-                let color = `${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)}`
+                    let color = `${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)}`
                 GamePanel.innerHTML=``
                 var level = 9
 
@@ -229,7 +210,6 @@
                 alert("答對了")
                 GamePanel.innerHTML=``
                 newGame()
-                }
                 }
 
             }
